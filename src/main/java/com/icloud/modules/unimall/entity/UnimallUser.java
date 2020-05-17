@@ -30,7 +30,7 @@ public class UnimallUser implements Serializable {
    	   	   /* 密码 */
        @TableField("password")
        private String password;
-   	   	   /* 登陆类型 */
+   	   	   /* 登陆类型  1微信  2 手机 3 账号*/
        @TableField("login_type")
        private Integer loginType;
    	   	   /* 登陆名称 */

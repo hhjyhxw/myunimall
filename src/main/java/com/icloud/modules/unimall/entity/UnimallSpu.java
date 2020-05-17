@@ -69,9 +69,23 @@ public class UnimallSpu implements Serializable {
    	   	   /* 商户id */
        @TableField("supplier_id")
        private Long supplierId;
+         /* 热门 */
+        @TableField("is_hot")
+        private Integer isHot;
+        /* 新品 */
+        @TableField("is_new")
+        private Integer isNew;
+        /* 折扣 */
+        @TableField("is_discount")
+        private Integer isDiscount;
+        /* 优选 */
+        @TableField("is_select")
+        private Integer isSelect;
+
 
     /*关联supplier*/
     @TableField(exist = false)
     private UnimallSupplier supplier;
-   	
+
+
 }

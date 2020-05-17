@@ -22,11 +22,16 @@
      <result property="gmtUpdate" column="gmt_update"/>
      <result property="gmtCreate" column="gmt_create"/>
      <result property="supplierId" column="supplier_id"/>
+        <result property="isHot" column="is_hot"/>
+        <result property="isNew" column="is_new"/>
+        <result property="isDiscount" column="is_discount"/>
+        <result property="isSelect" column="is_select"/>
     </resultMap>
 
    <!-- 基础字段列 -->
    <sql id="Base_Column_List" >
-id,original_price,price,vip_price,title,sales,img,detail,description,category_id,freight_template_id,unit,status,gmt_update,gmt_create,supplier_id
+id,original_price,price,vip_price,title,sales,img,detail,description,category_id,freight_template_id,unit,status,gmt_update,gmt_create,supplier_id,
+       is_hot,is_new,is_discount,is_select
     </sql>
 
 

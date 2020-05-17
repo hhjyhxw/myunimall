@@ -67,6 +67,8 @@ public class MallLoginController {
         newmember.setPassword(MD5Utils.encode2hex(password));
         newmember.setLoginname(userName);
         newmember.setEmail(email);
+        newmember.setLoginType(3);//登陆类型
+        newmember.setLevel(0);//普通会员
         newmember.setGmtCreate(new Date());
         newmember.setStatus(0);
         newmember.setLastLoginIp(request.getRemoteHost() + ":"+ request.getRemotePort());
