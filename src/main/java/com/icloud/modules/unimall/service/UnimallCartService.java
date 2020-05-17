@@ -1,11 +1,14 @@
 package com.icloud.modules.unimall.service;
 
-import com.icloud.modules.unimall.entity.UnimallCart;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import com.icloud.basecommon.service.BaseServiceImpl;
 import com.icloud.modules.unimall.dao.UnimallCartMapper;
+import com.icloud.modules.unimall.entity.UnimallCart;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
 /**
  * 
  * @author zdh
@@ -18,5 +21,9 @@ public class UnimallCartService extends BaseServiceImpl<UnimallCartMapper,Unimal
 
     @Autowired
     private UnimallCartMapper unimallCartMapper;
+
+    public List<UnimallCart> queryCartItemSupplierVoList(UnimallCart cart){
+        return  unimallCartMapper.queryCartItemSupplierVoList(cart);
+    }
 }
 

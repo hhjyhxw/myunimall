@@ -69,5 +69,9 @@ public class UnimallSpu implements Serializable {
    	   	   /* 商户id */
        @TableField("supplier_id")
        private Long supplierId;
+
+    /*关联supplier*/
+    @TableField(exist = false)
+    private UnimallSupplier supplier;
    	
 }

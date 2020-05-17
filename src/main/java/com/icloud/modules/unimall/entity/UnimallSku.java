@@ -57,5 +57,9 @@ public class UnimallSku implements Serializable {
    	   	   /*  */
        @TableField("gmt_create")
        private Date gmtCreate;
+
+        /*关联spu*/
+        @TableField(exist = false)
+        private UnimallSpu spu;
    	
 }

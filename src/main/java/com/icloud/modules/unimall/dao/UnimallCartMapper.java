@@ -14,4 +14,6 @@ import java.util.Map;
 public interface UnimallCartMapper extends BaseMapper<UnimallCart> {
 
 	List<UnimallCart> queryMixList(Map<String, Object> map);
+
+    List<UnimallCart> queryCartItemSupplierVoList(UnimallCart cart);
 }

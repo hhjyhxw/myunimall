@@ -1,8 +1,5 @@
 package com.icloud.basecommon.model;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +17,7 @@ public class MapRespone extends HashMap<String, Object> {
 }
 
     public static MapRespone error(String message) {
-        return error("500", message);
+        return error("1000", message);
     }
 
     public static MapRespone error(String code, String message) {

@@ -39,5 +39,21 @@ public class UnimallCart implements Serializable {
    	   	   /*  */
        @TableField("gmt_create")
        private Date gmtCreate;
+
+       /*关联sku商品*/
+       @TableField(exist = false)
+       private UnimallSku sku;
+
+        /*关联sku商品*/
+        @TableField(exist = false)
+        private UnimallSpu spu;
+
+        /*关联商户*/
+        @TableField(exist = false)
+        private UnimallSupplier supplier;
+
+    /*用于查询*/
+    @TableField(exist = false)
+    private Long[] ids;
    	
 }
