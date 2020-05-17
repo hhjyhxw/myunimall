@@ -111,7 +111,7 @@ public class MallLoginController {
         }
         String accessToken = RandomUtil.getRandomString(20);
         redisService.set(accessToken,user,3000L);//3000秒 50分
-        return MapRespone.ok("登陆成功");
+        return MapRespone.ok("登陆成功").put("accessToken",accessToken).put("member",member);
 
     }
 

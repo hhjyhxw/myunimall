@@ -2,7 +2,7 @@ package com.icloud.config.resolver;
 
 import com.icloud.annotation.LoginUser;
 import com.icloud.config.global.Constants;
-import com.icloud.modules.wx.entity.WxUser;
+import com.icloud.modules.unimall.entity.UnimallUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.MethodParameter;
@@ -23,7 +23,7 @@ public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgu
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-        return parameter.getParameterType().isAssignableFrom(WxUser.class) && parameter.hasParameterAnnotation(LoginUser.class);
+        return parameter.getParameterType().isAssignableFrom(UnimallUser.class) && parameter.hasParameterAnnotation(LoginUser.class);
     }
 
     @Override
@@ -35,8 +35,8 @@ public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgu
             return null;
         }
         //获取用户信息
-        WxUser user = (WxUser)object;
-        logger.info("======当前登录用户id:{},昵称：{}",user.getId(),user.getNickname());
+        UnimallUser user = (UnimallUser)object;
+        logger.info("======当前登录用户id:{},昵称：{}",user.getId(),user.getLoginname());
         return user;
     }
 }
