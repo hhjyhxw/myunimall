@@ -54,7 +54,8 @@ public class CartItemOrderUtils {
             CarItemVo vo = new CarItemVo();
             vo.setTotalAmount(new BigDecimal(ci.getNum()*ci.getSku().getPrice()/100));
             vo.setPrice(new BigDecimal(ci.getSku().getPrice()/100));
-            vo.setListImgPath(ci.getSku().getImg());
+//            vo.setListImgPath(ci.getSku().getImg());
+            vo.setListImgPath(ci.getSpu().getImg());
             vo.setPName(ci.getSku().getTitle());
             vo.setQuantity(ci.getNum());
             vo.setProductId(ci.getSku().getId());

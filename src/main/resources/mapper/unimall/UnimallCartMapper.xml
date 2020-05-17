@@ -21,13 +21,13 @@ id,sku_id,user_id,num,gmt_update,gmt_create
     </sql>
 
     <select id="queryCartItemSupplierVoList" resultMap="BaseResultMap">
-        select t.* ,sku.title as "sku.title",sku.img as "sku.img",sku.original_price as "sku.originalPrice",
+        select t.* ,sku.id as "sku.id",sku.title as "sku.title",sku.img as "sku.img",sku.original_price as "sku.originalPrice",
         sku.price as "sku.price",sku.stock as "sku.stock",sku.freeze_stock as "sku.freezeStock",
         s.id as "supplier.id",s.shop_name as "supplier.shopName",s.shop_icon as "supplier.shopIcon",
-        s.address as "supplier.address",spu.id as "spu.id",spu.status as "spu.status"
+        s.address as "supplier.address",spu.id as "spu.id",spu.status as "spu.status",spu.img as "spu.img"
         from t_unimall_cart t,t_unimall_sku sku,t_unimall_spu spu,t_unimall_supplier s
         <where>
-            t.sku_id = sku.id and sku.spu_id = spu.id and sup.supplier_id = s.id
+            t.sku_id = sku.id and sku.spu_id = spu.id and spu.supplier_id = s.id
             <if test="id != null">
                 and t.id=#{id}
             </if>
