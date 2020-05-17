@@ -28,6 +28,9 @@ id,sku_id,user_id,num,gmt_update,gmt_create
         from t_unimall_cart t,t_unimall_sku sku,t_unimall_spu sku,t_unimall_supplier s
         <where>
             t.sku_id = sku.id and sku.spu_id = spu.id and sup.supplier_id = s.id
+            <if test="id != null">
+                and t.id=#{id}
+            </if>
             <if test="userId != null">
                 and t.user_id=#{userId}
             </if>

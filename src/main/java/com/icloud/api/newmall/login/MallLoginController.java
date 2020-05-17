@@ -80,7 +80,7 @@ public class MallLoginController {
      * member:password
      * @return
      */
-    @RequestMapping("/register")
+    @RequestMapping("/login")
     @ResponseBody
     @AuthIgnore
     public MapRespone login(String userName,String password){

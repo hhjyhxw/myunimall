@@ -68,7 +68,7 @@ public class CartItemOrderUtils {
     /**
      * 获取用户选择的 购物车记录
      */
-    public static List<UnimallCart> getNewCartList(List<UnimallCart> cartList,String[] pids){
+    public  List<UnimallCart> getNewCartList(List<UnimallCart> cartList,String[] pids){
         List<UnimallCart> newList = new ArrayList<UnimallCart>();
         for(UnimallCart carItem:cartList){
             for(String pid:pids){
@@ -81,7 +81,7 @@ public class CartItemOrderUtils {
         return newList;
     }
 
-    public static BigDecimal getTotalMoney(List<UnimallCart> list) {
+    public  BigDecimal getTotalMoney(List<UnimallCart> list) {
         BigDecimal toatalMoney = new BigDecimal(0);
         for (UnimallCart temp:list){
             toatalMoney = toatalMoney.add(new BigDecimal(temp.getNum()*temp.getSku().getPrice()/100));
@@ -90,7 +90,7 @@ public class CartItemOrderUtils {
     }
 
 
-    public static Integer getTotalQuantitys(List<UnimallCart> list) {
+    public  Integer getTotalQuantitys(List<UnimallCart> list) {
         Integer toatalQuantitys = 0;
         for (UnimallCart temp:list){
             toatalQuantitys+=temp.getNum();
@@ -105,7 +105,7 @@ public class CartItemOrderUtils {
      * @author yutao
      * @date 2016年11月14日下午7:41:22
      */
-    public static boolean isNumeric(String str) {
+    public  boolean isNumeric(String str) {
         // 该正则表达式可以匹配所有的数字 包括负数
         Pattern pattern = Pattern.compile("-?[0-9]+\\.?[0-9]*");
         String bigStr;
