@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icloud.modules.unimall.dao.UnimallConfigMapper">
+
+
+    <!-- 基础map -->
+    <resultMap type="com.icloud.modules.unimall.entity.UnimallConfig" id="BaseResultMap">
+     <id property="id" column="id"/>
+     <result property="keyWord" column="key_word"/>
+     <result property="valueWorth" column="value_worth"/>
+     <result property="gmtCreate" column="gmt_create"/>
+     <result property="gmtUpdate" column="gmt_update"/>
+    </resultMap>
+
+   <!-- 基础字段列 -->
+   <sql id="Base_Column_List" >
+id,key_word,value_worth,gmt_create,gmt_update
+    </sql>
+
+
+<select id="queryMixList" resultMap="BaseResultMap">
+select * from t_unimall_config t
+<where>
+<if test="id != null">
+    and t.id = #{id}
+</if>
+<if test="key_word != null">
+    and t.key_word = #{key_word}
+</if>
+<if test="value_worth != null">
+    and t.value_worth = #{value_worth}
+</if>
+<if test="gmt_create != null">
+    and t.gmt_create = #{gmt_create}
+</if>
+</where>
+</select>
+</mapper>

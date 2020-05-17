@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icloud.modules.unimall.dao.UnimallSupplierMapper">
+
+
+    <!-- 基础map -->
+    <resultMap type="com.icloud.modules.unimall.entity.UnimallSupplier" id="BaseResultMap">
+     <id property="id" column="id"/>
+     <result property="phone" column="phone"/>
+     <result property="contact" column="contact"/>
+     <result property="shopName" column="shop_name"/>
+     <result property="shopIcon" column="shop_icon"/>
+     <result property="appid" column="appid"/>
+     <result property="appsecret" column="appsecret"/>
+     <result property="longitude" column="longitude"/>
+     <result property="latitude" column="latitude"/>
+     <result property="businessHours" column="business_hours"/>
+     <result property="openid" column="openid"/>
+     <result property="status" column="status"/>
+     <result property="deliveryScope" column="delivery_scope"/>
+     <result property="province" column="province"/>
+     <result property="city" column="city"/>
+     <result property="county" column="county"/>
+     <result property="address" column="address"/>
+     <result property="sortNum" column="sort_num"/>
+     <result property="gmtCreate" column="gmt_create"/>
+     <result property="gmtUpdate" column="gmt_update"/>
+    </resultMap>
+
+   <!-- 基础字段列 -->
+   <sql id="Base_Column_List" >
+id,phone,contact,shop_name,shop_icon,appid,appsecret,longitude,latitude,business_hours,openid,status,delivery_scope,province,city,county,address,sort_num,gmt_create,gmt_update
+    </sql>
+
+
+<select id="queryMixList" resultMap="BaseResultMap">
+select * from t_unimall_supplier t
+<where>
+<if test="id != null">
+    and t.id = #{id}
+</if>
+<if test="phone != null">
+    and t.phone = #{phone}
+</if>
+<if test="contact != null">
+    and t.contact = #{contact}
+</if>
+<if test="shop_name != null">
+    and t.shop_name = #{shop_name}
+</if>
+<if test="shop_icon != null">
+    and t.shop_icon = #{shop_icon}
+</if>
+<if test="appid != null">
+    and t.appid = #{appid}
+</if>
+<if test="appsecret != null">
+    and t.appsecret = #{appsecret}
+</if>
+<if test="longitude != null">
+    and t.longitude = #{longitude}
+</if>
+<if test="latitude != null">
+    and t.latitude = #{latitude}
+</if>
+<if test="business_hours != null">
+    and t.business_hours = #{business_hours}
+</if>
+<if test="openid != null">
+    and t.openid = #{openid}
+</if>
+<if test="status != null">
+    and t.status = #{status}
+</if>
+<if test="delivery_scope != null">
+    and t.delivery_scope = #{delivery_scope}
+</if>
+<if test="province != null">
+    and t.province = #{province}
+</if>
+<if test="city != null">
+    and t.city = #{city}
+</if>
+<if test="county != null">
+    and t.county = #{county}
+</if>
+<if test="address != null">
+    and t.address = #{address}
+</if>
+<if test="sort_num != null">
+    and t.sort_num = #{sort_num}
+</if>
+<if test="gmt_create != null">
+    and t.gmt_create = #{gmt_create}
+</if>
+</where>
+</select>
+</mapper>

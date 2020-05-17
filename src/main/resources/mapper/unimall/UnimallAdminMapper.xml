@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icloud.modules.unimall.dao.UnimallAdminMapper">
+
+
+    <!-- 基础map -->
+    <resultMap type="com.icloud.modules.unimall.entity.UnimallAdmin" id="BaseResultMap">
+     <id property="id" column="id"/>
+     <result property="username" column="username"/>
+     <result property="password" column="password"/>
+     <result property="phone" column="phone"/>
+     <result property="realname" column="realname"/>
+     <result property="avatarUrl" column="avatar_url"/>
+     <result property="roleIds" column="role_ids"/>
+     <result property="status" column="status"/>
+     <result property="lastLoginIp" column="last_login_ip"/>
+     <result property="gmtLastLogin" column="gmt_last_login"/>
+     <result property="gmtUpdate" column="gmt_update"/>
+     <result property="gmtCreate" column="gmt_create"/>
+    </resultMap>
+
+   <!-- 基础字段列 -->
+   <sql id="Base_Column_List" >
+id,username,password,phone,realname,avatar_url,role_ids,status,last_login_ip,gmt_last_login,gmt_update,gmt_create
+    </sql>
+
+
+<select id="queryMixList" resultMap="BaseResultMap">
+select * from t_unimall_admin t
+<where>
+<if test="id != null">
+    and t.id = #{id}
+</if>
+<if test="username != null">
+    and t.username = #{username}
+</if>
+<if test="password != null">
+    and t.password = #{password}
+</if>
+<if test="phone != null">
+    and t.phone = #{phone}
+</if>
+<if test="realname != null">
+    and t.realname = #{realname}
+</if>
+<if test="avatar_url != null">
+    and t.avatar_url = #{avatar_url}
+</if>
+<if test="role_ids != null">
+    and t.role_ids = #{role_ids}
+</if>
+<if test="status != null">
+    and t.status = #{status}
+</if>
+<if test="last_login_ip != null">
+    and t.last_login_ip = #{last_login_ip}
+</if>
+<if test="gmt_last_login != null">
+    and t.gmt_last_login = #{gmt_last_login}
+</if>
+<if test="gmt_update != null">
+    and t.gmt_update = #{gmt_update}
+</if>
+</where>
+</select>
+</mapper>

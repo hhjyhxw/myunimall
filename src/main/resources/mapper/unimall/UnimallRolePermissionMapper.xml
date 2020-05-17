@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icloud.modules.unimall.dao.UnimallRolePermissionMapper">
+
+
+    <!-- 基础map -->
+    <resultMap type="com.icloud.modules.unimall.entity.UnimallRolePermission" id="BaseResultMap">
+     <id property="id" column="id"/>
+     <result property="roleId" column="role_id"/>
+     <result property="permission" column="permission"/>
+     <result property="deleted" column="deleted"/>
+     <result property="gmtUpdate" column="gmt_update"/>
+     <result property="gmtCreate" column="gmt_create"/>
+    </resultMap>
+
+   <!-- 基础字段列 -->
+   <sql id="Base_Column_List" >
+id,role_id,permission,deleted,gmt_update,gmt_create
+    </sql>
+
+
+<select id="queryMixList" resultMap="BaseResultMap">
+select * from t_unimall_role_permission t
+<where>
+<if test="id != null">
+    and t.id = #{id}
+</if>
+<if test="role_id != null">
+    and t.role_id = #{role_id}
+</if>
+<if test="permission != null">
+    and t.permission = #{permission}
+</if>
+<if test="deleted != null">
+    and t.deleted = #{deleted}
+</if>
+<if test="gmt_update != null">
+    and t.gmt_update = #{gmt_update}
+</if>
+</where>
+</select>
+</mapper>

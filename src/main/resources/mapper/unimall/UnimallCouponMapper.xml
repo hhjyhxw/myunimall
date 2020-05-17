@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icloud.modules.unimall.dao.UnimallCouponMapper">
+
+
+    <!-- 基础map -->
+    <resultMap type="com.icloud.modules.unimall.entity.UnimallCoupon" id="BaseResultMap">
+     <id property="id" column="id"/>
+     <result property="title" column="title"/>
+     <result property="type" column="type"/>
+     <result property="description" column="description"/>
+     <result property="total" column="total"/>
+     <result property="surplus" column="surplus"/>
+     <result property="limit" column="limit"/>
+     <result property="discount" column="discount"/>
+     <result property="min" column="min"/>
+     <result property="status" column="status"/>
+     <result property="categoryId" column="category_id"/>
+     <result property="days" column="days"/>
+     <result property="gmtStart" column="gmt_start"/>
+     <result property="gmtEnd" column="gmt_end"/>
+     <result property="gmtUpdate" column="gmt_update"/>
+     <result property="gmtCreate" column="gmt_create"/>
+     <result property="supplierId" column="supplier_id"/>
+    </resultMap>
+
+   <!-- 基础字段列 -->
+   <sql id="Base_Column_List" >
+id,title,type,description,total,surplus,limit,discount,min,status,category_id,days,gmt_start,gmt_end,gmt_update,gmt_create,supplier_id
+    </sql>
+
+
+<select id="queryMixList" resultMap="BaseResultMap">
+select * from t_unimall_coupon t
+<where>
+<if test="id != null">
+    and t.id = #{id}
+</if>
+<if test="title != null">
+    and t.title = #{title}
+</if>
+<if test="type != null">
+    and t.type = #{type}
+</if>
+<if test="description != null">
+    and t.description = #{description}
+</if>
+<if test="total != null">
+    and t.total = #{total}
+</if>
+<if test="surplus != null">
+    and t.surplus = #{surplus}
+</if>
+<if test="limit != null">
+    and t.limit = #{limit}
+</if>
+<if test="discount != null">
+    and t.discount = #{discount}
+</if>
+<if test="min != null">
+    and t.min = #{min}
+</if>
+<if test="status != null">
+    and t.status = #{status}
+</if>
+<if test="category_id != null">
+    and t.category_id = #{category_id}
+</if>
+<if test="days != null">
+    and t.days = #{days}
+</if>
+<if test="gmt_start != null">
+    and t.gmt_start = #{gmt_start}
+</if>
+<if test="gmt_end != null">
+    and t.gmt_end = #{gmt_end}
+</if>
+<if test="gmt_update != null">
+    and t.gmt_update = #{gmt_update}
+</if>
+<if test="gmt_create != null">
+    and t.gmt_create = #{gmt_create}
+</if>
+</where>
+</select>
+</mapper>

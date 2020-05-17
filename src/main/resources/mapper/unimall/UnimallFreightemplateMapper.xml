@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icloud.modules.unimall.dao.UnimallFreightemplateMapper">
+
+
+    <!-- 基础map -->
+    <resultMap type="com.icloud.modules.unimall.entity.UnimallFreightemplate" id="BaseResultMap">
+     <id property="id" column="id"/>
+     <result property="templateName" column="template_name"/>
+     <result property="spuLocation" column="spu_location"/>
+     <result property="deliveryDeadline" column="delivery_deadline"/>
+     <result property="defaultFreePrice" column="default_free_price"/>
+     <result property="defaultFirstNum" column="default_first_num"/>
+     <result property="defaultFirstMoney" column="default_first_money"/>
+     <result property="defaultContinueNum" column="default_continue_num"/>
+     <result property="defaultContinueMoney" column="default_continue_money"/>
+     <result property="gmtCreate" column="gmt_create"/>
+     <result property="gmtUpdate" column="gmt_update"/>
+    </resultMap>
+
+   <!-- 基础字段列 -->
+   <sql id="Base_Column_List" >
+id,template_name,spu_location,delivery_deadline,default_free_price,default_first_num,default_first_money,default_continue_num,default_continue_money,gmt_create,gmt_update
+    </sql>
+
+
+<select id="queryMixList" resultMap="BaseResultMap">
+select * from t_unimall_freight_template t
+<where>
+<if test="id != null">
+    and t.id = #{id}
+</if>
+<if test="template_name != null">
+    and t.template_name = #{template_name}
+</if>
+<if test="spu_location != null">
+    and t.spu_location = #{spu_location}
+</if>
+<if test="delivery_deadline != null">
+    and t.delivery_deadline = #{delivery_deadline}
+</if>
+<if test="default_free_price != null">
+    and t.default_free_price = #{default_free_price}
+</if>
+<if test="default_first_num != null">
+    and t.default_first_num = #{default_first_num}
+</if>
+<if test="default_first_money != null">
+    and t.default_first_money = #{default_first_money}
+</if>
+<if test="default_continue_num != null">
+    and t.default_continue_num = #{default_continue_num}
+</if>
+<if test="default_continue_money != null">
+    and t.default_continue_money = #{default_continue_money}
+</if>
+<if test="gmt_create != null">
+    and t.gmt_create = #{gmt_create}
+</if>
+</where>
+</select>
+</mapper>
